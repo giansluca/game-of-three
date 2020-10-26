@@ -100,7 +100,7 @@ class PlayerManagerTest {
 		// When
 		// Then
 		assertThatThrownBy(() -> underTest2.start(arguments2))
-			.hasMessageContaining("Player TWO Already started, port in use");
+			.hasMessageContaining("Player TWO already started, port in use");
 				
 		// Finally
 		underTest1.shutdown();

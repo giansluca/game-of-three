@@ -83,7 +83,7 @@ class ListenWorkerTest {
 		// Then
 		assertThatThrownBy(() -> underTest.work(listenMessage))
 			.isInstanceOf(IllegalStateException.class)
-			.hasMessageContaining(playerName + " Already started, port in use");
+			.hasMessageContaining(playerName + " already started, port in use");
 	}
 	
 	@Test
