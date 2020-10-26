@@ -32,7 +32,7 @@ public class ListenWorker extends AbstractWorker {
 		
 		if (socketServerManager.isPortBusy(LOCALHOST, player.listenPort))
 			throw new IllegalStateException(
-					String.format("%s Already started, port in use", player.name));
+					String.format("%s already started, port in use", player.name));
 		
 		if (mode.equals(SEND_FIRST))
 			if (socketServerManager.isPortBusy(LOCALHOST, player.sendFirstFlagPort))
@@ -57,7 +57,7 @@ public class ListenWorker extends AbstractWorker {
 			
 		if (number == WINNER) {
 			log(String.format(
-					"%s is the WINNER - Sendig EXIT signal to other player", player.name));
+					"%s is the WINNER - sendig Exit signal to other player", player.name));
 			
 			putMessageOnQueue(SEND_EXIT);
 		} else {
