@@ -5,12 +5,12 @@ import org.gmdev.utils.Factory;
 import static org.gmdev.utils.PropertiesLoader.loadPlayerPropertiesFile;
 
 import io.github.giansluca.jargs.Jargs;
+import io.github.giansluca.jargs.exception.JargsException;
 
 public class Main { 
 	
-	public static void main(String[] args) throws Exception {
-		String schema = "playername*, sendfirst%, initnumber#";
-		Jargs arguments = new Jargs(schema, args);
+	public static void main(String[] args) throws JargsException {
+		Jargs arguments = parseArguments(args);
 		
 		if (!arguments.has("playername"))
 			throw new IllegalArgumentException("No player name supplied");
@@ -20,5 +20,15 @@ public class Main {
 		Factory.getFactory()
 			.createPlayerManager().start(arguments);
 	}
+	
+	private static Jargs parseArguments(String[] args) {
+		String schema = "playername*, sendfirst%, initnumber#";
+		try {
+			return new Jargs(schema, args);
+		} catch (JargsException e) {
+			throw new IllegalStateException(e);
+		}
+	}
+	
 	
 }
