@@ -9,7 +9,7 @@ import io.github.giansluca.jargs.exception.JargsException;
 
 public class Main { 
 	
-	public static void main(String[] args) throws JargsException {
+	public static void main(String[] args) {
 		Jargs arguments = parseArguments(args);
 		
 		if (!arguments.has("playername"))
