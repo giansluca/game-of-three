@@ -12,7 +12,7 @@ import org.gmdev.player.Player;
 import org.gmdev.player.workers.WorkerBag;
 import org.gmdev.serviceprocessor.ServiceRequest;
 
-public class StartMessageQueueConsumerTask implements ServiceRequest{
+public class StartMessageQueueConsumerTask implements ServiceRequest {
 	
 	public static final String I_WON = "I_WON";
 	public static final String OTHER_WON = "OTHER_WON";
